@@ -1,0 +1,27 @@
+a = 0x01;
+b = 0x00;
+c = 0x01;
+f = 0x01;
+
+for ( int i = 0 ; i < 7; i++ )
+{
+	for ( int j = 0 ; j < 7; j++ )
+	{
+		d = a|b;
+		PORTC = d;
+		a = a << 1;
+	}
+	
+	for ( int j = 0 ; j < 7; j++ )
+	{
+		f = c|h;
+		PORTC = f;
+		c = c >> 1;
+	}
+	
+	b = b << 1;
+	h = h << 1;
+}
+
+
+
