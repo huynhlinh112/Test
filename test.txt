@@ -3,3 +3,13 @@
 http://123link.pw/zcjRjISK              //TAI LIEU HOC LINUX 
 https://github.com/Debdyut/Smart-Glass
 https://www.factoryforward.com/mp3-tf-16p-arduino-dfplayer/
+
+
+- Thiết kế mạch nhỏ gọn hơn có thể làm đồng hồ đeo tay.
+- Hạn chế sự dụng Module mà tự hàn mạch để tiết kiệm chi phí.
+- Kết hợp sử dụng module điều khiển bằng giọng nói, đồng thời không cần sử dụng đến wifi.
+- Phát triễn thêm màn hình OLED rực rỡ không hạn chế góc nhìn, radio FM tích hợp, chức năng ghi âm cùng với ngõ vào âm thanh phụ, duyệt ảnh, xem phim.
+- Máy MP3 này có các tính năng như: radio FM, ghi âm giọng nói, đồng hồ báo thức, hỗ trợ nhiều định dạng âm thanh khác nhau, duyệt ảnh, xem phim, đọc văn bản. Ngoài ra, còn nên được trang bị hiệu ứng âm thanh SRS Wow, thời gian sử dụng pin phải lâu.
+
+ 	Một lần nữa em chân thành cảm ơn Ths. Nguyễn Lan Anh đã tận tình giúp đỡ, chỉ bảo và đưa hướng đi đúng đắn cho em trong thời gian qua, giúp em có thể hoàn thành tốt những nhiệm vụ đã đặt ra.
+	Trong quá trình thực hiện nghiên cứu không tránh khỏi những sai sót, em rất mong nhận được sự chia sẻ, chỉ bảo của thầy cô và bạn bè. Em xin chân thành cảm ơn.
