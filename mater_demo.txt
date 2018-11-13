@@ -1,0 +1,74 @@
+#include <ModbusMaster232.h> 
+#include <SoftwareSerial.h>  // Modbus RTU pins   D7(13),D8(15)   RX,TX
+// Instantiate ModbusMaster object as slave ID 1
+  ModbusMaster232 node(1);
+int Floder = 0;
+int song = 0;
+int control = 0;
+int vl = 0;
+String SetAlarm = "";
+String NotAlarm = "";
+void setup() {
+  Serial.begin(9600); 
+  delay(100);
+  node.begin(9600); // Modbus RTU
+  delay(1000);
+  Serial.println("Connected "); 
+  Serial.println("Modbus RTU Master Online");
+}
+
+void loop(){
+
+//Set Alarm
+  Serial.println(" "); 
+  node.readHoldingRegisters(5, 1); 
+  Serial.print("[5] Set Alarm music ");
+  SetAlarm = node.getResponseBuffer(0);
+  Serial.println(SetAlarm);
+  node.clearResponseBuffer();
+  
+//Not Alarm
+  Serial.println(" "); 
+  node.readHoldingRegisters(6, 1); 
+  Serial.print("[6] Not Alarm music ");
+  NotAlarm = node.getResponseBuffer(0);
+  Serial.println(NotAlarm);
+  node.clearResponseBuffer();
+  
+
+//Volume
+  Serial.println(" "); 
+  node.readHoldingRegisters(7, 1); 
+  Serial.print("[7] Volume music ");
+  vl = node.getResponseBuffer(0);
+  Serial.println(vl);
+  node.clearResponseBuffer();
+	
+
+//Control
+  Serial.println(" "); 
+  node.readHoldingRegisters(8, 1); 
+  Serial.print("[8] Control music ");
+  control = node.getResponseBuffer(0);
+  Serial.println(control);
+  node.clearResponseBuffer();
+
+
+//floder
+  Serial.println(" "); 
+  node.readHoldingRegisters(9, 1); 
+  Serial.print("[8] floder music ");
+  Floder = node.getResponseBuffer(0);
+  Serial.println(Floder);
+  node.clearResponseBuffer();
+
+//Song
+  Serial.println(" "); 
+  node.readHoldingRegisters(10, 1); 
+  Serial.print("[8] Song ");
+  song = node.getResponseBuffer(0);
+  Serial.println(song);
+  node.clearResponseBuffer();
+  delay(1000);
+
+}
