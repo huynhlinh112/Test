@@ -69,6 +69,6 @@ void loop(){
   song = node.getResponseBuffer(0);
   Serial.println(song);
   node.clearResponseBuffer();
-  delay(1000);
+  delay(100);
 
 }
