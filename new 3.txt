@@ -1,0 +1,61 @@
+// Wait one second before repeating :)
+int a[2], i = 0. j =0;
+int c[2];
+string SetAlarm = "";
+string NotAlarm = "";
+  //Set Alarm
+  Serial.print(" "); 
+  node.readHoldingRegisters(4, 1); 
+  s = node.getResponseBuffer(0);
+  Serial.print("[4] Set Alarm music:  ");
+  Serial.println(s);
+  delay(20);
+  
+  while(s > 0){
+	a[i++] = s%100;
+	s= s/100;
+  }
+  
+        if (a[1] < 10 && a[0] < 10){
+          SetAlarm = "0"+(String)a[1] + ":" + "0"+ (String)a[0] + ":" + "00";
+        }
+        else if (a[2] < 10 && a[0] > 9){
+          SetAlarm = "0"+(String)a[1] + ":" + (String)a[0] + ":" + "00";
+        }
+        else if (a[2] > 9 && a[0] < 10){
+          SetAlarm = (String)a[1] + ":" + "0"+ (String)a[0] + ":" + "00";
+        }
+        else {
+          SetAlarm = (String)a[1] + ":" + (String)a[0] + ":" + "00";
+        }
+
+//Not Alarm
+  Serial.print(" "); 
+  node.readHoldingRegisters(5, 1); 
+  t = node.getResponseBuffer(0);
+  Serial.print("[5] Not Alarm music ");
+  Serial.println(t);
+  delay(20);
+
+    while(s > 0){
+	c[j++] = t%10;
+	t= t/10;
+  }
+  
+  if(NotAlarm == timeString){
+	    myDFPlayer.stop();
+		Serial.println("Stop");
+  }
+  
+        if (c[1] < 10 && c[0] < 10){
+          SetAlarm = "0"+(String)c[1] + ":" + "0"+ (String)c[0] + ":" + "00";
+        }
+        else if (c[2] < 10 && c[0] > 9){
+          SetAlarm = "0"+(String)c[1] + ":" + (String)c[0] + ":" + "00";
+        }
+        else if (a[2] > 9 && a[0] < 10){
+          SetAlarm = (String)c[1] + ":" + "0"+ (String)c[0] + ":" + "00";
+        }
+        else {
+          SetAlarm = (String)c[1] + ":" + (String)c[0] + ":" + "00";
+        }
